@@ -3,6 +3,10 @@
     margin-left: 10em;
     margin-right: 10em;
     color: #667766;
+    font-size: 20
+}
+form {
+    font-size: 30
 }
 
 .title-style {
@@ -13,4 +17,7 @@
 }
 body {
     background-image: url("/static/background-image.jpg")
+}
+.footerbar {
+    background-color: #FFAAAA
 }

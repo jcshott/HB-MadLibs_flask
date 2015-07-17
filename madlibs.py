@@ -46,11 +46,14 @@ def show_mad_lib():
     chosen_color = request.args.get('color')
     chosen_noun = request.args.get('noun')
     chosen_adjective = request.args.get('adjective')
+    chosen_verbs = request.args.getlist('verbs')
     story_list = ["madlib.html", "madlib1.html", "madlib2.html"]
 
     story_choice = choice(story_list)
+    verb1_choice = choice(chosen_verbs)
+    verb2_choice = choice(chosen_verbs)
 
-    return render_template(story_choice, person=chosen_person, color=chosen_color, noun=chosen_noun, adjective=chosen_adjective)
+    return render_template(story_choice, verb1=verb1_choice, verb2=verb2_choice, person=chosen_person, color=chosen_color, noun=chosen_noun, adjective=chosen_adjective)
 
     # story_choice = request.args.get("story")
 
