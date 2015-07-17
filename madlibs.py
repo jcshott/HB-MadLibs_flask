@@ -48,7 +48,7 @@ def show_mad_lib():
     chosen_adjective = request.args.get('adjective')
     chosen_verbs = request.args.getlist('verbs')
     story_list = ["madlib.html", "madlib1.html", "madlib2.html"]
-
+    
     story_choice = choice(story_list)
     verb1_choice = choice(chosen_verbs)
     verb2_choice = choice(chosen_verbs)

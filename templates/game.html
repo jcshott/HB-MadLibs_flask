@@ -4,23 +4,43 @@
 
 {% block content %}
  <h1>Welcome to Mad Libs!</h1>
-    <form action="/madlib">
+    <form action="/madlib" id="form">
         <!-- <label>Happy or Sad story? <br>
             <input type="radio" name="story" value="happy">Happy :)<br>
             <input type="radio" name="story" value="sad">Sad :(<br><br>
         </label> -->
         <label>Please fill out words.<br>
-            Name a Person:<input type="text" name="person" required><br>
-            Name a Color:<input type="text" name="color" required><br>
-            Give a Noun:<input type="text" name="noun" required><br>
-            Give an Adjective:<input type="text" name="adjective" required><br>
-            Give us some Verbs:<input type="checkbox" name="verbs" value="walked">Walked
+            Name a Person:<input id="person" type="text" name="person"><br>
+            Name a Color:<input id="color" type="text" name="color" ><br>
+            Give a Noun:<input id="noun" type="text" name="noun" ><br>
+            Give an Adjective:<input id="adjective" type="text" name="adjective"><br>
+            Give us some Verbs:<input class='question' type="checkbox" name="verbs" value="walked">Walked
             <input type="checkbox" name="verbs" value="talked">Talked
             <input type="checkbox" name="verbs" value="sauntered">Sauntered
             <input type="checkbox" name="verbs" value="danced">Danced
             <input type="checkbox" name="verbs" value="extrapolated">Extrapolated
         </label>
         <br>
-        <input type="submit">
+        <input type="submit" id="submit-button">
     </form>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript">
+
+        var formFull = function(evt) {
+            var questionList = [$('#person').val(), $("#color").val(), $("#noun").val(), $("#adjective").val()];
+            console.log(questionList);
+            for (var value = 0; value < questionList.length; value++) {
+                if (questionList[value] == "") {
+                    alert("Please fill in all fields");
+                    evt.preventDefault();
+                    break
+   
+                };
+            };
+
+        };
+
+        $('#form').on('submit', formFull);
+
+    </script>
 {% endblock %}
