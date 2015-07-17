@@ -29,6 +29,37 @@ def greet_person():
 
     return render_template("compliment.html", person=player, compliment=compliment)
 
+@app.route('/game', methods=["POST"])
+def show_game_form():
+    decision = request.form.get("play")
+
+    if decision == "yes":
+        return render_template("game.html")
+    else:
+        return render_template("goodbye.html")
+
+
+
+@app.route('/madlib')
+def show_mad_lib():
+    chosen_person = request.args.get('person')
+    chosen_color = request.args.get('color')
+    chosen_noun = request.args.get('noun')
+    chosen_adjective = request.args.get('adjective')
+    story_list = ["madlib.html", "madlib1.html", "madlib2.html"]
+
+    story_choice = choice(story_list)
+
+    return render_template(story_choice, person=chosen_person, color=chosen_color, noun=chosen_noun, adjective=chosen_adjective)
+
+    # story_choice = request.args.get("story")
+
+    # if story_choice == "happy":
+    #     return render_template('madlibhappy.html', person=chosen_person, color=chosen_color, noun=chosen_noun, adjective=chosen_adjective)
+    #     # return render_template('madlib.html', person=chosen_person, color=chosen_color, noun=chosen_noun, adjective=chosen_adjective)
+    # else:
+    #     return render_template('madlibsad.html', person=chosen_person, color=chosen_color, noun=chosen_noun, adjective=chosen_adjective)     
+
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app

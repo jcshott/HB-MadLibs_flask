@@ -1,0 +1,16 @@
+.content-style {
+    font-family: 'Arvo', serif;
+    margin-left: 10em;
+    margin-right: 10em;
+    color: #667766;
+}
+
+.title-style {
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    color: #FF7777;
+    text-shadow: 3px 3px #FFAAAA;
+}
+body {
+    background-image: url("/static/background-image.jpg")
+}
