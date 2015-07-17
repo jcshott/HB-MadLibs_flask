@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}The Game!!{% endblock %}
+
+{% block content %}
+ <h1>Welcome to Mad Libs!</h1>
+    <form action="/madlib">
+        <!-- <label>Happy or Sad story? <br>
+            <input type="radio" name="story" value="happy">Happy :)<br>
+            <input type="radio" name="story" value="sad">Sad :(<br><br>
+        </label> -->
+        <label>Please fill out words.<br>
+            Name a Person:<input type="text" name="person" required><br>
+            Name a Color:<input type="text" name="color" required><br>
+            Give a Noun:<input type="text" name="noun" required><br>
+            Give an Adjective:<input type="text" name="adjective" required><br>
+        </label>
+        <br>
+        <input type="submit">
+    </form>
+{% endblock %}

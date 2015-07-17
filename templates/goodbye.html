@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}GoodBye!{% endblock %}
+
+
+{% block content %}
+    <h1>Bye! You are missing out!</h1>
+    <form action="/game" method="POST">
+        <label>Are you sure???</label>
+        <input type="radio" name="play" value="yes" >I wanna play!
+        <input type="radio" name="play" value="no">No GAME EVERRRR!11!!!
+        <br>
+        <input type="submit">
+    </form>
+{% endblock %}

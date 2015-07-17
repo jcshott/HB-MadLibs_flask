@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Arvo|Poiret+One|Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/madlibs.css">
+    <title >
+        {% block title%}TITLE GOES HERE{% endblock %}
+    </title>
+</head>
+<body>
+    <center><h1 class="title-style"><b>The Mad Libs Game</b></h1></center>
+    <div class="content-style">{% block content %} CONTENT GOES HERE! {% endblock %}
+
+        <br><footer>By Corey and Allison</footer>
+    </div>
+</body>
+</html>
